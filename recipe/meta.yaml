@@ -30,6 +30,7 @@ requirements:
     - {{ posix }}zip               # [win]
   host:
     - libblas
+    - liblapack
     - r-base
     - r-expm
     - r-mvtnorm
