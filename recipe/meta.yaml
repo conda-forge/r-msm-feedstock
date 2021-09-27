@@ -1,4 +1,4 @@
-{% set version = "1.6.8" %}
+{% set version = "1.6.9" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/msm_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/msm/msm_{{ version }}.tar.gz
-  sha256: f3f18a9ea622a6d56f0f6d675b4890081d6def8b91a694c6764dac0d1cf262b4
+  sha256: aefcd9bb40b0167311d088d6fe23fdf7aa35deaac0f8b47ef02377cff5577023
 
 build:
-  merge_build_host: True  # [win]
-  number: 2
+  merge_build_host: true  # [win]
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -50,13 +50,10 @@ test:
 about:
   home: https://github.com/chjackson/msm
   license: GPL-2.0-or-later
-  summary: Functions for fitting continuous-time Markov and hidden Markov multi-state models
-    to longitudinal data.  Designed for processes observed at arbitrary times in continuous
-    time (panel data) but some other observation schemes are supported. Both Markov
-    transition rates and the hidden Markov output process can be modelled in terms of
-    covariates, which may be constant or piecewise-constant in time.
+  summary: Functions for fitting continuous-time Markov and hidden Markov multi-state models to longitudinal data.  Designed for processes observed at arbitrary times in continuous time (panel data) but some other observation schemes are supported. Both Markov transition rates and the hidden Markov output process can be
+    modelled in terms of covariates, which may be constant or piecewise-constant in time.
   license_family: GPL3
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
+  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
 
 extra:
   recipe-maintainers:
