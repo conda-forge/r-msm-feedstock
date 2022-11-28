@@ -1,4 +1,4 @@
-{% set version = "1.6.9" %}
+{% set version = "1.7" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/msm_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/msm/msm_{{ version }}.tar.gz
-  sha256: aefcd9bb40b0167311d088d6fe23fdf7aa35deaac0f8b47ef02377cff5577023
+  sha256: 7f89f8e47966919e49ef8dfe1f9c82ac6553b2f404bb03840da5f42e73dd0db0
 
 build:
   merge_build_host: true  # [win]
-  number: 1
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
