@@ -3,6 +3,7 @@ About r-msm-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-msm-feedstock/blob/main/LICENSE.txt)
 
+
 About r-msm
 -----------
 
@@ -11,6 +12,7 @@ Home: https://github.com/chjackson/msm
 Package license: GPL-2.0-or-later
 
 Summary: Functions for fitting continuous-time Markov and hidden Markov multi-state models to longitudinal data.  Designed for processes observed at arbitrary times in continuous time (panel data) but some other observation schemes are supported. Both Markov transition rates and the hidden Markov output process can be modelled in terms of covariates, which may be constant or piecewise-constant in time.
+
 About r-msm
 -----------
 
@@ -167,7 +169,7 @@ available continuous integration services. Thanks to the awesome service provide
 [CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/),
 [Drone](https://cloud.drone.io/welcome), and [TravisCI](https://travis-ci.com/)
 it is possible to build and upload installable packages to the
-[conda-forge](https://anaconda.org/conda-forge) [Anaconda-Cloud](https://anaconda.org/)
+[conda-forge](https://anaconda.org/conda-forge) [anaconda.org](https://anaconda.org/)
 channel for Linux, Windows and OSX respectively.
 
 To manage the continuous integration and simplify feedstock maintenance
