@@ -1,4 +1,4 @@
-{% set version = "1.7.1" %}
+{% set version = "1.8" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,10 +9,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/msm_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/msm/msm_{{ version }}.tar.gz
-  sha256: d134782b966eed33742819595119ab1a61bec4416cc3fa7630a0f34c4e7f785b
+  sha256: a7e02e22d8d52d18c0b17ce22c4296313aeb8471af72deb6c1b1afcd979ff143
 
 build:
-  number: 1
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -20,9 +20,11 @@ build:
 requirements:
   build:
     - cross-r-base {{ r_base }}  # [build_platform != target_platform]
+    - r-expm                     # [build_platform != target_platform]
+    - r-generics                 # [build_platform != target_platform]
     - r-mvtnorm                  # [build_platform != target_platform]
     - r-survival                 # [build_platform != target_platform]
-    - r-expm                     # [build_platform != target_platform]
+    - r-tibble                   # [build_platform != target_platform]
     - {{ compiler('c') }}        # [unix]
     - {{ stdlib("c") }}          # [unix]
     - {{ compiler('m2w64_c') }}        # [win]
@@ -37,13 +39,17 @@ requirements:
     - liblapack
     - r-base
     - r-expm
+    - r-generics
     - r-mvtnorm
     - r-survival
+    - r-tibble
   run:
     - r-base
     - r-expm
+    - r-generics
     - r-mvtnorm
     - r-survival
+    - r-tibble
 
 test:
   commands:
@@ -56,7 +62,8 @@ about:
   summary: Functions for fitting continuous-time Markov and hidden Markov multi-state models to longitudinal data.  Designed for processes observed at arbitrary times in continuous time (panel data) but some other observation schemes are supported. Both Markov transition rates and the hidden Markov output process can be
     modelled in terms of covariates, which may be constant or piecewise-constant in time.
   license_family: GPL3
-  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
+  license_file:
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
 
 extra:
   recipe-maintainers:
