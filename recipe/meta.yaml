@@ -45,7 +45,6 @@ requirements:
     - r-tibble
   run:
     - r-base
-    - {{ native }}gcc-libs         # [win]
     - r-expm
     - r-generics
     - r-mvtnorm
