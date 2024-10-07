@@ -1,4 +1,4 @@
-{% set version = "1.8" %}
+{% set version = "1.8.1" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,7 +9,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/msm_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/msm/msm_{{ version }}.tar.gz
-  sha256: a7e02e22d8d52d18c0b17ce22c4296313aeb8471af72deb6c1b1afcd979ff143
+  sha256: 39c568291dbf090e3698bc992b66a912ef337fa3b02c8cc517f1e9094bdb81c6
 
 build:
   number: 0
